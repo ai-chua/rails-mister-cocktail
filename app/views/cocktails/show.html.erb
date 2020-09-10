@@ -1,0 +1,18 @@
+<h2>#show</h2>
+
+<h3><%= @cocktail.name %></h3>
+
+<p>
+  <h3>Doses from the Community</h3>
+</p>
+
+<ol>
+<% @cocktail.doses.each do |dose| %>
+  <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+<% end %>
+</ol>
+
+<br>
+<p>
+<%= link_to 'Go back to all cocktails view', cocktails_path %>
+</p>
