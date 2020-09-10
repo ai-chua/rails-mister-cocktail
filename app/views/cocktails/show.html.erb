@@ -1,6 +1,4 @@
-<h2>#show</h2>
-
-<h3><%= @cocktail.name %></h3>
+<h2><%= @cocktail.name.capitalize %></h2>
 
 <p>
   <h3>Doses from the Community</h3>
@@ -8,9 +6,17 @@
 
 <ol>
 <% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+  <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to 'Delete', cocktail_path(@cocktail.id), method: :delete %> </li>
 <% end %>
 </ol>
+
+<h3>New dose</h3>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
 
 <br>
 <p>

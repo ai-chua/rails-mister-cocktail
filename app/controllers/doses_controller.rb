@@ -16,6 +16,11 @@ class DosesController < ApplicationController
     end
   end
 
+  def destroy
+    @dose = Dose.find(params[:cocktail_id])
+    @dose.destroy!
+  end
+
   private
 
   def doses_params
