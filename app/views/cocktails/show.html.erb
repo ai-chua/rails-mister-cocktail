@@ -1,5 +1,6 @@
 <h2><%= @cocktail.name.capitalize %></h2>
 
+<div class="container">
 <p>
   <h3>Doses from the Community</h3>
 </p>
@@ -13,12 +14,13 @@
 <h3>New dose</h3>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= f.input :description, input_html: {class: "border border-dark form-input" } %>
+  <%= f.association :ingredient, input_html: { class: "border border-dark form-input" } %>
+  <%= f.button :submit, class: 'btn border border-dark' %>
 <% end %>
 
 <br>
 <p>
-<%= link_to 'Go back to all cocktails view', cocktails_path %>
+<%= link_to 'Go back to all cocktails view', root_path %>
 </p>
+</div>

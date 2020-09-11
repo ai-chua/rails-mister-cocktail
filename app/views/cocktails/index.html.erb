@@ -1,9 +1,23 @@
-<h2>#index</h2>
+<%= render "hero" %>
 
-<ol>
-<% @cocktails.each do |cocktail| %>
-<li><%= link_to cocktail.name, cocktail_path(cocktail.id) %></li>
-<% end %>
-</ol>
+<div class="my-4">
 
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
+  <div class="card-container p-2">
+      <% @cocktails.each do |cocktail| %>
+
+      <div class="card border border-dark card-background" style="width: 18rem;">
+        <img class="card-img card-img-top" src="https://i.pinimg.com/564x/b1/02/26/b102268b4f6a586ada33183db6c857c5.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name.capitalize %></h5>
+          <p class="card-text card-description">Lorem ipsum dolor sit amet consectetur adipisicing, elit. Labore, quisquam.</p>
+
+          <%= link_to 'Get the recipe', cocktail_path(cocktail.id), class: 'btn border border-dark' %>
+        </div>
+      </div>
+
+      <!-- <li><%= link_to cocktail.name.capitalize, cocktail_path(cocktail.id) %></li> -->
+      <% end %>
+  </div>
+
+  <!-- <%= link_to 'Add a new cocktail', new_cocktail_path %> -->
+</div>

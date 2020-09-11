@@ -1,0 +1,23 @@
+.hero {
+  background-image: url('https://i.pinimg.com/564x/a5/c8/f0/a5c8f0a16a64c4d14e0903eefaa00dc6.jpg');
+  height: 100vh;
+  background-position: left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 120px 0 0;
+
+    h1 {
+      font-size: 4em;
+      line-height: 0.7em;
+      // letter-spacing: 0.1em;
+    }
+
+    p {
+      font-size: 2em;
+      letter-spacing: 0.1em;
+    }
+}

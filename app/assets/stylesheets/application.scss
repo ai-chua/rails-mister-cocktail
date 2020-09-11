@@ -11,3 +11,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// global
+
+body {
+  color: #181818;
+}
+
+#brand {
+  font-family: $headers-font;
+  font-weight: bold;
+  font-size: 1.5 * $font-size-base;
+}
+
+// hyper-link colors
+a, a:active, a:visited {
+  color: #181818;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
