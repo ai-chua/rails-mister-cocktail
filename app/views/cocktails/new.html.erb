@@ -1,9 +1,12 @@
+<div class="container my-4">
 <h2>Add new cocktail</h2>
 
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name, input_html: { class: "border border-dark form-input" } %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: 'btn border border-dark' %>
 <% end %>
 
 <br><br>
 <%= link_to 'Go back to all cocktails view', root_path %>
+</div>

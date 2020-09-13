@@ -6,7 +6,9 @@
       <% @cocktails.each do |cocktail| %>
 
       <div class="card border border-dark card-background" style="width: 18rem;">
-        <img class="card-img card-img-top" src="https://i.pinimg.com/564x/b1/02/26/b102268b4f6a586ada33183db6c857c5.jpg" alt="Card image cap">
+
+        <%= cl_image_tag cocktail.photo.key, class: 'card-img card-img-top', height: 600, crop: :fill %>
+
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name.capitalize %></h5>
           <p class="card-text card-description">Lorem ipsum dolor sit amet consectetur adipisicing, elit. Labore, quisquam.</p>

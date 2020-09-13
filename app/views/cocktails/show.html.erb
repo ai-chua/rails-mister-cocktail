@@ -1,26 +1,38 @@
-<h2><%= @cocktail.name.capitalize %></h2>
-
 <div class="container">
-<p>
-  <h3>Doses from the Community</h3>
-</p>
+  <div class="row">
+    <div class="m-3 col-8 d-flex justify-content-center">
+      <%= cl_image_tag @cocktail.photo.key, height: 600, crop: :fill %>
+    </div>
 
-<ol>
-<% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to 'Delete', cocktail_path(@cocktail.id), method: :delete %> </li>
-<% end %>
-</ol>
+    <div class="m-3 col-3">
+      <h2><%= @cocktail.name.capitalize %></h2>
+      <p>Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Aut, quidem commodi consequuntur vel modi dolorum quam corrupti accusamus, itaque molestias animi beatae cupiditate sed, delectus blanditiis nam sapiente illum quo.</p>
+    </div>
+  </div>
 
-<h3>New dose</h3>
+  <p>
+    <h3>Doses from the Community</h3>
+  </p>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <ol>
+    <% @cocktail.doses.each do |dose| %>
+    <div>
+    <li class="d-flex justify-content-between"> <span><%= dose.description %> of <%= dose.ingredient.name %></span> <span><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_path(@cocktail.id), method: :delete %></span></li>
+    </div>
+    <% end %>
+  </ol>
+
+  <h3>New dose</h3>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description, input_html: {class: "border border-dark form-input" } %>
   <%= f.association :ingredient, input_html: { class: "border border-dark form-input" } %>
   <%= f.button :submit, class: 'btn border border-dark' %>
-<% end %>
+  <% end %>
 
-<br>
-<p>
-<%= link_to 'Go back to all cocktails view', root_path %>
-</p>
+  <br>
+
+  <p>
+    <%= link_to 'Go back to all cocktails view', root_path %>
+  </p>
 </div>

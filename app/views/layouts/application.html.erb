@@ -12,12 +12,7 @@
 </head>
 
 <body>
-  <div class="nav-bar d-flex mx-3 p-3 border-bottom border-dark justify-content-between">
-    <div id="brand" class="nav-bar-child"> Mister Cocktail </div>
-    <div class="d-flex">
-      <div class="nav-bar-child"> <%= link_to 'Home', root_path %> </div>
-      <div class="nav-bar-child"> <%= link_to 'Share Your Drink', new_cocktail_path %> </div>
-    </div>
+<%= render 'layouts/navbar' %>
   </div>
   <%= yield %>
   <footer>
